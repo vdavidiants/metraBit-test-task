@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="todo">
+        <h1>To Do list</h1>
+        <div class="todo-info">
+            <div class="todo-info__block">
+                <span class="todo-info__text">Scope</span>
+                <span id="scope-value" class="todo-info__value">0</span>
+            </div>
+            <div class="todo-info__block">
+                <span class="todo-info__text">Active</span>
+                <span id="active-value" class="todo-info__value">0</span>
+            </div>
+            <div class="todo-info__block">
+                <span class="todo-info__text">Successful</span>
+                <span id="successful-value" class="todo-info__value">0</span>
+            </div>
+        </div>
+        <button class="button-add-new-list" type="button"></button>
+    </div>
+    <div class="list-block">
+        <div class="list-block__no-task">
+            <span>There are currently no tasks. Click on the button "Create new task" to add a new one</span>
+        </div>
+        <ul class="list-block--current"></ul>
+        <div class="list-block__container list-block__container--new list-block__container--hidden">
+            <div class="list-block__task-text">
+                <input type="checkbox" class="custom-checkbox" id="checkbox-create">
+                <label class="list-block__label" for="checkbox-create"></label>
+                <span class="list-block__date current-date"></span>
+                <input class="list-block__text list-block__input list-block__input-create"
+                       placeholder="Please enter task description">
+            </div>
+            <div class="list-block__button">
+                <button class="button-add-new" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.99998 12L9.99998 17L20 7.00001" stroke-width="2"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="button-clear-new" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 7.00006H20" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 10.9999V16.9999" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 10.9999V16.9999" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5 7.00006L6 19.0001C6 19.5305 6.21071 20.0392 6.58579 20.4143C6.96086 20.7893 7.46957 21.0001 8 21.0001H16C16.5304 21.0001 17.0391 20.7893 17.4142 20.4143C17.7893 20.0392 18 19.5305 18 19.0001L19 7.00006"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 7V4C9 3.73478 9.10536 3.48043 9.29289 3.29289C9.48043 3.10536 9.73478 3 10 3H14C14.2652 3 14.5196 3.10536 14.7071 3.29289C14.8946 3.48043 15 3.73478 15 4V7"
+                              stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul class="list-block--completed"></ul>
+    </div>
+    <div class="wrapper__add-new">
+        <button class="button-add-new-list" type="button">
+            <span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 4.99997V19" stroke="white" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                    <path d="M5.00001 12H19" stroke="white" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span>Create new task</span>
+        </button>
+    </div>
+</div>
+<script src="js/app.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap");
+@import "reset.css";
+:root {
+  --white-base: #fff;
+  --color-violet: #889dea;
+  --primary-green: #88eaa9;
+  --color-text: #3f3f3f;
+  --grey-light: #c7c7c7;
+  --grey-light-base: #bbbbbb;
+  --color-grey: #afafaf;
+  --font-base: "Poppins", sans-serif;
+}
+
+.wrapper {
+  font-family: var(--font-base);
+}
+.wrapper .todo {
+  position: relative;
+  color: var(--white-base);
+  background: var(--color-violet);
+  border-bottom-right-radius: 41px;
+}
+.wrapper .todo h1 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 900;
+  padding-top: 8px;
+}
+.wrapper .todo .todo-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 32px;
+  padding-bottom: 72px;
+}
+.wrapper .todo .todo-info__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+}
+.wrapper .todo .todo-info__text {
+  font-size: 12px;
+  line-height: 16px;
+}
+.wrapper .todo .todo-info__value {
+  font-size: 56px;
+  line-height: 56px;
+}
+.wrapper .todo::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: var(--color-violet);
+  left: 0;
+  bottom: -32px;
+}
+.wrapper .todo .button-add-new-list {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 15;
+  bottom: -48px;
+}
+.wrapper .todo .button-add-new-list:before {
+  content: "";
+  width: 22px;
+  height: 26px;
+  position: absolute;
+  background: url("../images/plus.svg");
+}
+.wrapper .list-block {
+  position: relative;
+  z-index: 10;
+  background: var(--white-base);
+  padding: 88px 56px 0;
+  border-top-left-radius: 41px;
+}
+.wrapper .list-block__no-task {
+  text-align: center;
+  font-size: 18px;
+  line-height: 24px;
+}
+.wrapper .list-block__no-task--hidden {
+  display: none;
+}
+.wrapper .list-block__container {
+  display: flex;
+  border-bottom: 1px solid var(--grey-light);
+  padding-bottom: 8px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.wrapper .list-block__container--new label {
+  pointer-events: none;
+}
+.wrapper .list-block__container--hidden {
+  display: none;
+}
+.wrapper .list-block__date {
+  color: var(--color-violet);
+  font-size: 12px;
+  line-height: 16px;
+}
+.wrapper .list-block__text {
+  color: var(--color-text);
+  line-height: 22px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  resize: none;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+.wrapper .list-block__text--hidden {
+  display: none;
+}
+.wrapper .list-block__button {
+  display: flex;
+  margin-left: 35px;
+}
+.wrapper .list-block button {
+  margin: 0 8px;
+  border: none;
+  background: none;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  cursor: url("../images/cursor.png") 2 2, pointer;
+}
+.wrapper .list-block button svg {
+  stroke: var(--grey-light);
+}
+.wrapper .list-block button:hover svg {
+  stroke: var(--color-violet);
+}
+.wrapper .list-block--completed .list-block__text {
+  color: var(--grey-light-base);
+  text-decoration: line-through;
+}
+.wrapper .list-block--completed .button-edit {
+  pointer-events: none;
+}
+.wrapper .list-block__task-text {
+  width: 100%;
+  padding-left: 24px;
+  position: relative;
+}
+.wrapper .list-block__input::placeholder {
+  color: var(--grey-light-base);
+}
+.wrapper__add-new {
+  display: flex;
+  justify-content: center;
+}
+.wrapper__add-new .button-add-new-list {
+  width: 208px;
+  margin-top: 26px;
+  margin-bottom: 40px;
+}
+.wrapper .button-add-new-list {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 11px;
+  padding: 8px 16px;
+  background: var(--primary-green);
+  font-size: 16px;
+  line-height: 24px;
+  height: 48px;
+  color: var(--white-base);
+  font-weight: 600;
+  cursor: url("../images/cursor.png") 2 2, pointer;
+}
+.wrapper .button-add-new-list span {
+  display: flex;
+  align-items: center;
+}
+.wrapper .button-add-new-list:hover {
+  opacity: 0.8;
+}
+.wrapper .button--hidden {
+  display: none;
+}
+.wrapper .custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  top: 0;
+}
+.wrapper .custom-checkbox + label::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--color-violet);
+  border-radius: 2px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  cursor: url("../images/cursor.png") 2 2, pointer;
+}
+.wrapper .custom-checkbox:checked + label::before {
+  background: var(--color-violet);
+  background-image: url("../images/checked.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.wrapper .button-save, .wrapper .button-add-new {
+  stroke: var(--color-grey);
+}
+.wrapper .button-save:hover, .wrapper .button-add-new:hover {
+  stroke: var(--color-violet);
+}
+
+/*# sourceMappingURL=index.css.map */
